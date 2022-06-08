@@ -3,20 +3,37 @@ package techassesment.backend.model;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.List;
 import java.util.Map;
 
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private Map<String,Long> bankAccounts;
+    private Long id; //CostumerID & userID
+    private String type;
+    private String userName;
+    private String firstName;
+    private String lastName;
+    private String customerNumber;
+    private String cardNumber;
+    private String password;
+    private String pin;
+    private List<Account> accounts;
 
     public User() {}
 
-    public User(String name, Map<String,Long> bankAccounts){
-        this.name = name;
-        this.bankAccounts = bankAccounts;
+    public User(String type, String userName, String firstName,
+                String lastName, String customerNumber, String cardNumber,
+                String password, String pin, List<Account> accounts){
+        this.type = type;
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.customerNumber = customerNumber;
+        this.cardNumber = cardNumber;
+        this.password = password;
+        this.pin = pin;
+        this.accounts = accounts;
     }
 
     public Long getId() {
@@ -27,26 +44,93 @@ public class User {
         this.id= id;
     }
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
-    public void setName(String name){
-        this.name = name;
+    public void setType(String type){
+        this.type = type;
     }
 
-    public Map<String,Long> getBankAccounts(){
-        return bankAccounts;
+    public String getUserName() {
+
+        return userName;
     }
-    public void setBankAccounts(Map<String,Long> bankAccounts) {
-        this.bankAccounts = bankAccounts;
+    public void setUserName(String userName){
+
+        this.userName = userName;
+    }
+
+    public String getFirstName() {
+
+        return firstName;
+    }
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+
+        return lastName;
+    }
+    public void setLastName(String lastName){
+        this.lastName = lastName;
+    }
+
+    public String getCustomerNumber() {
+
+        return customerNumber;
+    }
+    public void setCustomerNumber(String customerNumber){
+
+        this.customerNumber = customerNumber;
+    }
+
+    public String getCardNumber() {
+
+        return cardNumber;
+    }
+    public void setCardNumber(String cardNumber){
+
+        this.cardNumber = cardNumber;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password){
+
+        this.password = password;
+    }
+
+    public String getPin() {
+        return pin;
+    }
+    public void setPin(String pin){
+
+        this.pin = pin;
+    }
+
+    public List<Account> getAccounts(){
+
+        return accounts;
+    }
+    public void setBankAccounts(List<Account> accounts) {
+        this.accounts = accounts;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id="+ id +
-                ", name=" + name + '\'' +
-                ", bankAccounts=" + bankAccounts + '\'' +
+                ", type=" + type + '\'' +
+                ", userName=" + userName + '\'' +
+                ", firstName=" + firstName + '\'' +
+                ", lastName=" + lastName + '\'' +
+                ", customerNumber=" + customerNumber + '\'' +
+                ", cardNumber=" + cardNumber + '\'' +
+                ", password=" + password + '\'' +
+                ", pin=" + pin + '\'' +
+                ", accounts=" + accounts + '\'' +
                 '}';
     }
 
