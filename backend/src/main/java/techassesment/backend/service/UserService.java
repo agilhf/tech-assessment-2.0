@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import techassesment.backend.model.User;
 import techassesment.backend.repo.UsersRepo;
 
+import java.util.UUID;
+
 @Service
 public class UserService {
     private final UsersRepo usersRepo;
@@ -15,6 +17,8 @@ public class UserService {
     }
 
     public User addUser(User user) {
+        user.setCardNumber(UUID.randomUUID().toString());
+        user.setCustomerNumber(UUID.randomUUID().toString());
         return usersRepo.save(user);
     }
 }
