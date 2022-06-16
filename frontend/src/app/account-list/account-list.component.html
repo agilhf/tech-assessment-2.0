@@ -1,0 +1,27 @@
+<div class="card my-5">
+  <div class="card-body">
+
+    <h3 [style.color]="totalSum()>1? 'black': 'red'"> {{ totalSum() | currency : 'CHF' : true: '1.2-2' }} </h3>
+    <table class="table table-borderless">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Bank</th>
+        <th scope="col">Type</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Currency</th>
+        <th scope="col">Transactions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let account of accounts">
+        <td>{{ account.name }}</td>
+        <td>{{ account.type}}</td>
+        <td [style.color]="account.balance>1? 'black': 'red'">{{ account.balance | currency : account.currency :false : '1.2-2' }}</td>
+<!--        <td [style.color]="account.balance>1? 'black': 'red'">{{ accountService.rounder(account.balance)| number : '1.2-2' }} </td>-->
+        <td>{{ account.currency }}</td>
+        <td><a routerLink="/transaction/{{account.id}}" routerLinkActive="activate">Show Transactions</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

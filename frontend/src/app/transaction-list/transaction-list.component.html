@@ -1,0 +1,22 @@
+<div class="card my-5">
+  <div class="card-body">
+
+    <h3 [style.color]="totalSum()>1? 'black': 'red'"> {{ totalSum() | currency : 'CHF' : true: '1.2-2' }} </h3>
+    <table class="table table-borderless">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Datum</th>
+        <th scope="col">Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.counterparty }}</td>
+        <td>{{ transaction.bookingDate}}</td>
+        <td [style.color]="transaction.amount>1? 'black': 'red'">{{ transaction.amount | currency : 'CHF' :false : '1.2-2}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

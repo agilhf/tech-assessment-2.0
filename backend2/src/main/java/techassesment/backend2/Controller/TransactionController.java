@@ -8,7 +8,7 @@ import techassesment.backend2.Repository.TransactionRepository;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:8080")
 public class TransactionController {
     private final TransactionRepository transactionRepository;
 
