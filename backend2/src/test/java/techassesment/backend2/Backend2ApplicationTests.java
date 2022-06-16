@@ -1,10 +1,10 @@
-package techassesment.backend;
+package techassesment.backend2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackendApplicationTests {
+class Backend2ApplicationTests {
 
     @Test
     void contextLoads() {
